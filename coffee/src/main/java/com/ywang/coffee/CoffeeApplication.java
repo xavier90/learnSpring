@@ -81,7 +81,7 @@ public class CoffeeApplication implements ApplicationRunner {
         List<CoffeeOrder> list = coffeeOrderRepository.findTop3ByOrderByUpdateTimeDescIdAsc();
         log.info("findTop3ByOrderByUpdateTimeDescIdAsc: {}", getJoinedOrderId(list));
 
-        list = coffeeOrderRepository.findByCustomerById("Matt");
+        list = coffeeOrderRepository.findByCustomer("Matt");
         log.info("findByCustomerById: {}", getJoinedOrderId(list));
 
         list.forEach(o -> {
